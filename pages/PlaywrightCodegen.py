@@ -1,4 +1,5 @@
 import random
+from playwright.async_api import Page
 from pages.BasePage import BasePage
 
 
@@ -31,3 +32,15 @@ class PlaywrightPage(BasePage):
             "span").click()
 
         page.get_by_role("button", name="Залишити запит").click()
+
+    @staticmethod
+    def fill_project_manegmant_registration(page: Page):
+        page.get_by_role("link", name="Project Management Start").click()
+        page.get_by_role("link", name="Почати зараз").first.click()
+        page.get_by_role("heading", name="Реєстрація").click()
+        page.get_by_role("link", name="Увійти до LMS").click()
+        page.get_by_placeholder("Пошта").click()
+        page.get_by_placeholder("Пошта").fill("vvv@etwtwet.com")
+        page.get_by_placeholder("Пароль").click()
+        page.get_by_placeholder("Пароль").fill("123123123123142")
+        page.get_by_role("button", name="Увійти").click()
