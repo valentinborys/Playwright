@@ -1,4 +1,3 @@
-import time
 from playwright.async_api import Page
 from pages.BasePage import BasePage
 from locators import RegistrationLocators
