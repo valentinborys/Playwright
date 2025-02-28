@@ -22,3 +22,14 @@ def test_playwright_codegen(browser) -> None:
     # Verify that the success message is displayed
     expect(page.get_by_text("Відправлено")).to_be_visible(timeout=5000)
 
+
+def test_project_manegmant_registration(browser):
+    context = browser.new_context()
+    page = context.new_page()
+    pl_codegen = PlaywrightPage()
+
+    page.goto("https://ithillel.ua/")
+
+    pl_codegen.fill_project_manegmant_registration(page)
+
+    expect(page.get_by_text("Ви ввели невірну адресу електронної пошти або пароль")).to_have_text('Ви ввели невірну адресу електронної пошти або пароль')
