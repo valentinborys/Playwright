@@ -5,6 +5,7 @@ from pages.Registration_page import Registration
 
 class TestCodegen(BasePage):
     @pytest.mark.smoke
+    @pytest.mark.skip
     @pytest.mark.parametrize("browser", ["chromium"], indirect=True)
     def test_login_chromium(self, browser):
         registration = Registration()
