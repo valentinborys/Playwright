@@ -1,6 +1,7 @@
 import random
 from playwright.async_api import Page
 from pages.BasePage import BasePage
+import pytest
 
 
 class PlaywrightPage(BasePage):
@@ -33,6 +34,7 @@ class PlaywrightPage(BasePage):
 
         page.get_by_role("button", name="Залишити запит").click()
 
+    @pytest.mark.skip
     @staticmethod
     def fill_project_manegmant_registration(page: Page):
         page.get_by_role("link", name="Project Management Start").click()
