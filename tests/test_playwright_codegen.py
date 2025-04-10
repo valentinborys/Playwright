@@ -7,7 +7,6 @@ from playwright.sync_api import expect
 class TestCodegen(BasePage):
 
     @pytest.mark.parametrize("browser", ["firefox"], indirect=True)
-    @pytest.mark.skip
     def test_playwright_codegen(self, browser) -> None:
 
         # Create a new browser context
@@ -23,11 +22,11 @@ class TestCodegen(BasePage):
         # Fill out and submit the form
         pl_codegen.fill_test_form(page)
 
-        time.sleep(10)
         # Verify that the success message is displayed
         expect(page.get_by_text("Відправлено")).to_be_visible(timeout=5000)
 
 
+    @pytest.mark.skip
     def test_project_manegmant_registration(self, browser):
 
         # Create a new browser context
