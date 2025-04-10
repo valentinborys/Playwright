@@ -23,4 +23,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+          python -m playwright install
+
+      - name: Run tests
+        run: |
+          source venv/bin/activate
+          pytest --maxfail=1 --disable-warnings -q
