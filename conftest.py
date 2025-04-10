@@ -7,6 +7,6 @@ from playwright.sync_api import sync_playwright
 def browser(request):
     browser_type = request.param if hasattr(request, 'param') else 'chromium'
     with sync_playwright() as p:
-        browser = getattr(p, browser_type).launch(headless=False)
+        browser = getattr(p, browser_type).launch(headless=True)
         yield browser
         browser.close()
