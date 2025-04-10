@@ -34,8 +34,8 @@ class PlaywrightPage(BasePage):
 
         page.get_by_role("button", name="Залишити запит").click()
 
-    @pytest.mark.skip
     @staticmethod
+    @pytest.mark.skip
     def fill_project_manegmant_registration(page: Page):
         page.get_by_role("link", name="Project Management Start").click()
         page.get_by_role("link", name="Почати зараз").first.click()
