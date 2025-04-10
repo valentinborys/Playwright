@@ -21,7 +21,7 @@ class TestCodegen(BasePage):
 
         # Fill out and submit the form
         pl_codegen.fill_test_form(page)
-
+        time.sleep(10)
         # Verify that the success message is displayed
         expect(page.get_by_text("Відправлено")).to_be_visible(timeout=5000)
 
@@ -39,7 +39,6 @@ class TestCodegen(BasePage):
         # Fill out and submit the form
         pl_codegen.fill_project_manegmant_registration(page)
 
-        time.sleep(4)
         # Verify that the success message is displayed
         expect(page.get_by_text("Ви ввели невірну адресу електронної пошти або пароль")).to_have_text('Ви ввели невірну адресу електронної пошти або пароль')
 
