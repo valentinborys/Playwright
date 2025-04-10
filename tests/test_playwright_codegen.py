@@ -38,3 +38,5 @@ def test_project_manegmant_registration(browser):
 
     # Verify that the success message is displayed
     expect(page.get_by_text("Ви ввели невірну адресу електронної пошти або пароль")).to_have_text('Ви ввели невірну адресу електронної пошти або пароль')
+
+
