@@ -33,6 +33,7 @@ jobs:
 
       - name: Run tests with xvfb
         run: |
+          source venv/bin/activate
           export DISPLAY=:99
           xvfb-run -a pytest --maxfail=1 --disable-warnings -q
 
