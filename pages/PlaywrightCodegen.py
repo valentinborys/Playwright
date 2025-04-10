@@ -37,6 +37,7 @@ class PlaywrightPage(BasePage):
     def fill_project_manegmant_registration(page: Page):
         page.get_by_role("link", name="Project Management Start").click()
         page.get_by_role("link", name="Почати зараз").first.click()
+        page.wait_for_selector("role=heading[name='Реєстрація']", timeout=60000)
         page.get_by_role("heading", name="Реєстрація").click()
         page.get_by_role("link", name="Увійти до LMS").click()
         page.get_by_placeholder("Пошта").click()
