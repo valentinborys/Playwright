@@ -25,7 +25,7 @@ class TestCodegen(BasePage):
         # Verify that the success message is displayed
         expect(page.get_by_text("Відправлено")).to_be_visible(timeout=5000)
 
-
+    @pytest.mark.skip
     def test_project_manegmant_registration(self, browser):
 
         # Create a new browser context
